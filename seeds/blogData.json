@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Mark's Music",
+      "contents": "Music is very cool and is nice and is loud, I always listen to music.",
+      "user_id": "1"
+    },
+    {
+      "title": "Quiz about James",
+      "contents": "Do you know me? I thought we were friends, please take my quiz and see if you are!",
+      "user_id": "2"
+    },
+    {
+      "title": "Lukes Guide",
+      "contents": "This is a guide for being a very strong maxed player!",
+      "user_id": "3"
+    }
+  ]

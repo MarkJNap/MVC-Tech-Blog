@@ -1,0 +1,17 @@
+[
+    {
+        "comment_contents": "Very true I love music as well",
+        "blog_id" : "1",
+        "user_id" : "4"
+    },
+    {
+        "comment_contents": "I got 75%! I am your friend!",
+        "blog_id" : "2",
+        "user_id" : "5"
+    },
+    {
+        "comment_contents": "Thanks for the guide I am now the best",
+        "blog_id" : "3",
+        "user_id" : "6"
+    }
+]
