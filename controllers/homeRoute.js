@@ -12,7 +12,10 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    res.status(200).json(blogData);
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    res.render("homepage", {
+      blogs,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
