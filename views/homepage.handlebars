@@ -1,4 +1,7 @@
-        <section>
-            <h2>Sample Text</h2>
-            <p>More sample Text</p>
-        </section>
+{{#each blogs as |blog|}}
+<section>
+  <h2>{{blog.title}}</h2>
+  <p>{{blog.user.username}}</p>
+  <p>{{blog.contents}}</p>
+</section>
+{{/each}}

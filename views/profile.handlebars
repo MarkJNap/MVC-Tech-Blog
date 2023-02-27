@@ -1,0 +1,19 @@
+<header>
+  <h2> Welcome, {{username}}</h2>
+</header>
+
+<section>
+    <h3>Create a new blog!</h3>
+</section>
+
+{{#if blogs.length}}
+<section>
+    <h2>Published Blogs</h2>
+    {{#each blogs as |blog|}}
+    <div>
+        <h4>{{blog.name}}</h4>
+        <p>{{blog.contents}}</p>
+    </div>
+    {{/each}}
+</section>
+{{/if}}
