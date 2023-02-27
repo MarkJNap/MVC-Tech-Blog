@@ -3,17 +3,32 @@
 </header>
 
 <section>
-    <h3>Create a new blog!</h3>
+  <h3>Create a new blog!</h3>
+  <form class="new-blog-form">
+    <div>
+      <label for="blog-title">Blog Title:</label>
+      <input type="text" id="blog-title" />
+    </div>
+    <div>
+      <label for="blog-contents">Blog Contents:</label>
+      <textarea id="blog-contents"></textarea>
+    </div>
+    <div>
+      <button type="submit">Submit Blog</button>
+    </div>
+  </form>
 </section>
 
 {{#if blogs.length}}
-<section>
+  <section>
     <h2>Published Blogs</h2>
     {{#each blogs as |blog|}}
-    <div>
-        <h4>{{blog.name}}</h4>
+      <div>
+        <h4>{{blog.title}}</h4>
         <p>{{blog.contents}}</p>
-    </div>
+      </div>
     {{/each}}
-</section>
+  </section>
 {{/if}}
+
+<script src="./js/profile.js"></script>
