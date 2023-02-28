@@ -1,33 +1,38 @@
-<!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog Time</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
 
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog Time</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
     <header>
-        <h1>Tech Blog Time</h1>
-        <nav>
-            <p>Homepage</p>
-            <p>Dashboard</p>
-            <p>Login</p>
-        </nav>
+      <h1>Tech Blog Time</h1>
+      <nav>
+        <a href="/">Homepage</a>
+        {{#if logged_in}}
+        <a href="/profile">Dashboard</a>
+        <button type="button" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
     </header>
 
     <main>
-      {{{ body }}}
+      {{{body}}}
     </main>
 
     <footer>
-        <h3>Made by Mark Napolitano</h3>
-        <p>Contact Link</p>
+      <h3>Made by Mark Napolitano</h3>
+      <p>Contact Link</p>
     </footer>
-</body>
 
-
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+  </body>
 
 </html>

@@ -1,7 +1,7 @@
 {{#each blogs as |blog|}}
 <section>
-  <h2>{{blog.title}}</h2>
-  <p>{{blog.user.username}}</p>
-  <p>{{blog.contents}}</p>
+  <a href="/blog/{{blog.id}}">{{blog.title}}</a>
+  <p>By: {{blog.user.username}}</p>
+  <p>Created on: {{format_date blog.creation_date}}</p>
 </section>
 {{/each}}
