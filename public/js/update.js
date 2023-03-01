@@ -1,6 +1,3 @@
-
-// Currently Broken :(
-
 const updateFormHandler = async (event) => {
   event.preventDefault();
 
@@ -8,7 +5,7 @@ const updateFormHandler = async (event) => {
   const blog_description = document.querySelector("#blog-contents").value.trim();
 
   if (blog_title && blog_description) {
-    const id = window.location.toString().split("/")[window.location.toString().split('/').length - 1]
+    const id = window.location.toString().split("/")[window.location.toString().split("/").length - 1];
     const response = await fetch(`/api/blogs/${id}`, {
       method: "PUT",
       body: JSON.stringify({ blog_title, blog_description }),
@@ -21,6 +18,9 @@ const updateFormHandler = async (event) => {
       alert("Error updating blog ");
       console.log(response);
     }
+  } else {
+    alert("Error updating blog ");
+    console.log(response);
   }
 };
 

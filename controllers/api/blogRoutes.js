@@ -34,22 +34,22 @@ router.post('/', withAuth, async (req, res) => {
     }
   })
 
-  // Maybe broken?
   router.put("/:id", withAuth, async (req, res) => {
     try {
       const updateBlog = await Blog.update({
           title: req.body.blog_title,
-          contents: req.body.blog_description,
-          where: {
-            id: req.body.id
-          }
-      })
+          contents: req.body.blog_description,},
+          { where: {
+            id: req.params.id
+          }}
+      )
       if (!updateBlog) {
         res.status(404).json({ message: "Blog not updated!"})
         return;
       }
       res.status(200).json(updateBlog);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err)
     }
   })

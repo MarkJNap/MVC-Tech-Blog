@@ -3,30 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog Time</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
   </head>
 
   <body>
-    <header>
-      <h1>Tech Blog Time</h1>
-      <nav>
-        <a href="/">Homepage</a>
+    <header class="section">
+      <h1 class=" box title has-text-left-tablet-only has-text-centered-desktop">Mark's Tech Blog.</h1>
+      <nav class="navbar pt-2 subtitle is-3 is-justify-content-center">
+        <button class=" button is-info is-rounded mx-2"><a class="has-text-white" href="/">Homepage</a></button>
         {{#if logged_in}}
-        <a href="/profile">Dashboard</a>
-        <button type="button" id="logout">Logout</button>
+        <button class="button is-info is-rounded mx-2"><a class="has-text-white" href="/profile">Dashboard</a></button>
+        <button class="button is-danger is-rounded mx-2" type="button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <button class="button is-success is-rounded mx-2"><a class="has-text-white" href="/login">Login</a></button>
         {{/if}}
       </nav>
     </header>
 
-    <main>
+    <main class="section has-background-link-light">
       {{{body}}}
     </main>
 
-    <footer>
-      <h5>Made by Mark Napolitano</h5>
+    <footer class="box footer py-2">
+      <div class="content has-text-centered">
+        <h5>Made by Mark Napolitano</h5>
+      </div>
     </footer>
 
   {{#if logged_in}}

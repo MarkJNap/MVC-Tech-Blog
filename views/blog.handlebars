@@ -1,25 +1,30 @@
-<div>
-  <h2>{{title}}</h2>
-  <p>{{contents}}</p>
-  <p>Created by {{user.username}} on {{format_date creation_date}}</p>
+<div class="box has-background-success-light">
+  <h2 class="title is-4 has-text-link-dark m-3">{{title}}</h2>
+  <p class="title is-5 has-text-info pl-3">{{contents}}</p>
+  <p class="pt-3 pl-3">Created by {{user.username}} on {{format_date creation_date}}</p>
 </div>
 <div>
   {{#if logged_in}}
-    <form class="comment-form">
+    <form class="box has-background-success-light comment-form">
       <div>
-        <textarea id="comment-text" name="comment-text"></textarea>
+        <textarea class="textarea is-info mb-3" rows="3" id="comment-text" name="comment-text" placeholder="Type your comment..."></textarea>
       </div>
       <div>
-        <button type="submit">Add Comment</button>
+        <button class="button has-background-warning" type="submit">Add Comment</button>
       </div>
     </form>
     {{else}}
-    <button><a href="/login">Log in to leave a comment.</a></button>
+    <button class="button is-rounded has-background-warning mb-5"><a href="/login">Click to Login to leave a comment!</a></button>
   {{/if}}
 </div>
+{{#if comments.length}}
+<div>
+  <h2 class="title is-3 mb-2">Comments:</h2>
+</div>
+{{/if}}
 {{#each comments as |comment|}}
-  <div>
-    <h4>{{comment_contents}}</h4>
+  <div class="box has-background-primary-light">
+    <h4 class="title is-6">{{comment_contents}}</h4>
     <p>From {{user.username}}</p>
     <p>{{format_date creation_date}}</p>
   </div>

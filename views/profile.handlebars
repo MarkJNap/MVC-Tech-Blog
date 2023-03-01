@@ -1,33 +1,36 @@
 <header>
-  <h2> Welcome, {{username}}</h2>
+  <h2 class="title is-3 mb-3"> Welcome, {{username}}!</h2>
 </header>
 
-<section>
-  <h3>Create a new blog!</h3>
+<section class="box has-background-danger-light">
+  <h3 class="title is-4 mb-3">Create a new blog!</h3>
   <form class="new-blog-form">
     <div>
-      <label for="blog-title">Blog Title:</label>
-      <input type="text" id="blog-title" />
+      <label class="label" for="blog-title">Blog Title:</label>
+      <input class="input mb-3 is-danger" type="text" id="blog-title" />
     </div>
     <div>
-      <label for="blog-contents">Blog Contents:</label>
-      <textarea id="blog-contents"></textarea>
+      <label class="label" for="blog-contents">Blog Contents:</label>
+      <textarea class="textarea mb-3 is-danger" id="blog-contents"></textarea>
     </div>
     <div>
-      <button type="submit">Submit Blog</button>
+      <button class="button is-link" type="submit">Submit Blog</button>
     </div>
   </form>
 </section>
 
 {{#if blogs.length}}
-  <section class="blog-list">
-    <h2>Published Blogs</h2>
+  <section class="blog-list box has-background-warning-light">
+    <h2 class="title is-4 mb-3">Published Blogs</h2>
     {{#each blogs as |blog|}}
-      <div>
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-        <p>{{blog.contents}}</p>
-        <button data-id="{{blog.id}}"><a href="/updateblog/{{blog.id}}">Update Blog</a></button>
-        <button data-id="{{blog.id}}">Delete Blog</button>
+      <div class="box has-background-success-light">
+        <h4 class="title is-5 has-text-link-dark m-2"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+        <p class="pl-4">{{blog.contents}}</p>
+        <div class="buttons mt-4">
+        <button class="button is-primary ml-4 mr-6" data-id="{{blog.id}}"><a class="has-text-white" href="/updateblog/{{blog.id}}">Update Blog</a></button>
+        <button class="button is-danger delete-blog" data-id="{{blog.id}}">Delete Blog</button>
+        </div>
+
       </div>
     {{/each}}
   </section>
