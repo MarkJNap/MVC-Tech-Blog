@@ -20,15 +20,17 @@
 </section>
 
 {{#if blogs.length}}
-  <section>
+  <section class="blog-list">
     <h2>Published Blogs</h2>
     {{#each blogs as |blog|}}
       <div>
-        <h4>{{blog.title}}</h4>
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
         <p>{{blog.contents}}</p>
+        <button data-id="{{blog.id}}"><a href="/updateblog/{{blog.id}}">Update Blog</a></button>
+        <button data-id="{{blog.id}}">Delete Blog</button>
       </div>
     {{/each}}
   </section>
 {{/if}}
 
-<script src="./js/profile.js"></script>
+<script src="/js/profile.js"></script>

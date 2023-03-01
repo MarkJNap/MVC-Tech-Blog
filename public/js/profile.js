@@ -19,4 +19,20 @@ const blogFormHandler = async (event) => {
     }
 }
 
+const delBtnHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id')
+    const response = await fetch(`/api/blogs/${id}`, {
+      method: 'DELETE',
+    })
+    if (response.ok) {
+      document.location.reload()
+    } else {
+      alert("Error deleting blog: " + response)
+    }
+  }
+}
+
+
 document.querySelector('.new-blog-form').addEventListener('submit', blogFormHandler);
+document.querySelector('.blog-list').addEventListener('click', delBtnHandler);

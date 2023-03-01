@@ -13,14 +13,18 @@
         <button type="submit">Add Comment</button>
       </div>
     </form>
+    {{else}}
+    <button><a href="/login">Log in to leave a comment.</a></button>
   {{/if}}
 </div>
 {{#each comments as |comment|}}
   <div>
-  <h4>{{comment_contents}}</h4>
-  <p>From {{user.username}}</p>
-  <p>{{format_date creation_date}}</p>
+    <h4>{{comment_contents}}</h4>
+    <p>From {{user.username}}</p>
+    <p>{{format_date creation_date}}</p>
   </div>
 {{/each}}
 
-<script src="/js/comment.js"></script>
+{{#if logged_in}}
+  <script src="/js/comment.js"></script>
+{{/if}}

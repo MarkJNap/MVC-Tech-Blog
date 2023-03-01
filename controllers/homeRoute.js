@@ -48,6 +48,27 @@ router.get("/blog/:id", async (req, res) => {
   }
 })
 
+router.get("/updateblog/:id", withAuth, async (req, res) => {
+  try{
+    const updateBlogData = await Blog.findByPk(req.params.id);
+
+    if(!updateBlogData){
+      res.status(404).json({message: 'No Blog found with that id'});
+      return;
+    }
+    
+    const blog = updateBlogData.get({ plain: true })
+    res.render('updateblog', {
+      ...blog,
+      logged_in: req.session.logged_in
+    });
+
+  }catch (err){
+    res.status(500).json(err);
+  }
+  
+});
+
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
     res.redirect("/profile");

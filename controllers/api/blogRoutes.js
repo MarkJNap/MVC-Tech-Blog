@@ -16,4 +16,42 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const deleteBlog = await Blog.destroy({
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        }
+      })
+      if (!deleteBlog) {
+        res.status(404).json({ message: "Blog not found!"})
+        return;
+      }
+      res.status(200).json(deleteBlog);
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  })
+
+  // Maybe broken?
+  router.put("/:id", withAuth, async (req, res) => {
+    try {
+      const updateBlog = await Blog.update({
+          title: req.body.blog_title,
+          contents: req.body.blog_description,
+          where: {
+            id: req.body.id
+          }
+      })
+      if (!updateBlog) {
+        res.status(404).json({ message: "Blog not updated!"})
+        return;
+      }
+      res.status(200).json(updateBlog);
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  })
+
   module.exports = router;
