@@ -25,7 +25,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
     if (!deleteComment) {
-      res.status(404).json({ message: "Blog not found!" });
+      res.status(404).json({ message: "Comment not found!" });
       return;
     }
     res.status(200).json(deleteComment);

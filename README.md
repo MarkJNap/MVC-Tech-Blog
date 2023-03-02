@@ -3,11 +3,11 @@
 
 ## Description
 
-This Tech Blog application is my very first Full Stack project combining everything I've learnt into one application. This realy challenged me as it took a lot of thought and was hard to make progress at times, doing half of something led to needing the creation of something else and so on. Keeping everything neat was another challenge, but I am happy with the final result. There is some ideas I would improve such as having comments only be allowed to be deleted by the user who made them. The experience from building this is monumental and helped solidify concepts I had less of an understanding about.
+This Tech Blog application is my very first Full Stack project combining everything I've learnt into one application. This realy challenged me as it took a lot of thought and was hard to make progress at times, doing half of something led to needing the creation of something else and so on. Keeping everything neat was another challenge, but I am happy with the final result. There is some ideas I would improve such as having comments only have delete buttons for the user who made them. The experience from building this is monumental and helped solidify concepts I had less of an understanding about.
 
 ## Installation
 
-No installation is required if visiting the applications deployed page at: LINK GOES HERE
+No installation is required if visiting the applications deployed page at: https://gentle-beach-96121.herokuapp.com/
 
 If you wish to run it locally:
 After cloning the repository and navigating to the correct folder in GitBash the user needs to run `npm install` to ensure it downloads all needed packages/dependencies.
@@ -33,9 +33,12 @@ The User can create an account or Login on the Login screen.
 They will be directed to their profile page after logging in,
 allowing them to create a new blog, update their existing blogs or delete them.
 
-Heroku Deployment Link: LINK GOES HERE
+Heroku Deployment Link: 
+https://gentle-beach-96121.herokuapp.com/
 
 Webpage Demo: 
+
+[<img src="/assets/Tech-Blog-Demo.gif" alt="Tech Blog Demo"/>](/assets/Tech-Blog-Demo.gif)
 
 ## Credits
 

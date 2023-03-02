@@ -7,8 +7,10 @@ const delCommentBtnHandler = async (event) => {
     if (response.ok) {
       document.location.reload();
     } else {
-      alert("Error deleting comment: " + response);
+      alert("You cant delete someone elses comment!");
     }
+  } else {
+    alert("You have encountered an error")
   }
 };
 
