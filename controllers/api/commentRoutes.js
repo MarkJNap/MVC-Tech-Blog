@@ -16,4 +16,22 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    const deleteComment = await Comment.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+    if (!deleteComment) {
+      res.status(404).json({ message: "Blog not found!" });
+      return;
+    }
+    res.status(200).json(deleteComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

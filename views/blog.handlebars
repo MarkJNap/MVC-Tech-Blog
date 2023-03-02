@@ -21,15 +21,23 @@
 <div>
   <h2 class="title is-3 mb-2">Comments:</h2>
 </div>
-{{/if}}
 {{#each comments as |comment|}}
   <div class="box has-background-primary-light">
     <h4 class="title is-6">{{comment_contents}}</h4>
     <p>From {{user.username}}</p>
     <p>{{format_date creation_date}}</p>
+    
+    <button class="button is-danger delete-comment mt-2 is-small" data-id="{{comment.id}}">Delete Comment</button>
   </div>
 {{/each}}
+{{/if}}
 
 {{#if logged_in}}
   <script src="/js/comment.js"></script>
 {{/if}}
+
+{{#if comments.length}}
+  <script src="/js/commentdelete.js"></script>
+{{/if}}
+
+
