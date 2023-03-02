@@ -26,8 +26,9 @@
     <h4 class="title is-6">{{comment_contents}}</h4>
     <p>From {{user.username}}</p>
     <p>{{format_date creation_date}}</p>
-    
+    {{#if logged_in}}
     <button class="button is-danger delete-comment mt-2 is-small" data-id="{{comment.id}}">Delete Comment</button>
+    {{/if}}
   </div>
 {{/each}}
 {{/if}}
